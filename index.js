@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const studentName = studentNameInput.value;
         const personalMessage = personalMessageInput.value;
-        const courseName = courseNameInput ? courseNameInput.value : 'a course'; // Fallback to "a course" if no input
+        const courseName = courseNameInput.value.trim() !== '' ? courseNameInput.value : 'a course'; // Fallback to "a course" if no input
 
         if (studentName.trim() === '' || personalMessage.trim() === '') {
             alert('Please fill in all fields');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h1 style="font-weight:500">Certificate of Achievement</h1>
       <p>This is to certify that</p>
       <h3 style="font-weight:500">${studentName}</h3>
-      <p>has almost completed the<p>
+      ${courseName === courseNameInput.value ? `<p>has almost completed the<p>` : `<p>has almost completed<p>`}
       <h3 style="font-weight:500">${courseName}</h3>
       <p>with the legendary perseverance and world-class bad-assery for never giving up🏆</p>
       <img src="logo.png" alt="CodeSpace Logo" style="max-width:50%">
