@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 🚨 Generate certificate content dynamically
         certificateContent.innerHTML = `
-      <h1>Certificate of Achievement</h1>
+      <h1 style="font-weight:500">Certificate of Achievement</h1>
       <p>This is to certify that</p>
-      <h3>${studentName}</h3>
+      <h3 style="font-weight:500">${studentName}</h3>
       <p>has almost completed the<p>
-      <h3>${courseName}</h3>
+      <h3 style="font-weight:500">${courseName}</h3>
       <p>with the legendary perseverance and world-class bad-assery for never giving up🏆</p>
       <img src="logo.png" alt="CodeSpace Logo" style="max-width:50%">
       <p>${personalMessage}</p>
