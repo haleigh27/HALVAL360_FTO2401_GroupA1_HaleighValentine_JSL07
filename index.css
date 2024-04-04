@@ -107,11 +107,6 @@ h1,
     cursor: pointer;
 }
 
-/* Adding a fancy border to the certificate content */
-#certificateContent {
-    background: #f9f9f9 url('path/to/your/decorative-border-image.png') center/contain no-repeat;
-}
-
 /* Adjust button styles to fit the theme */
 button {
     background-color: #659f8f;
