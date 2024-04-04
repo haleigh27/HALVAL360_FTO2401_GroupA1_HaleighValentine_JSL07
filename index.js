@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const cardForm = document.getElementById('cardForm'); // 13
-    const modal = document.getElementById('modal'); //27
-    const certificateContent = document.getElementById('certificateContent'); // 30
-    const closeModal = document.querySelector('.close'); // 29
+    const cardForm = document.getElementById('cardForm');
+    const modal = document.getElementById('modal');
+    const certificateContent = document.getElementById('certificateContent');
+    const closeModal = document.querySelector('.close');
 
     // Hide the modal initially
     modal.style.display = 'none';
@@ -19,6 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const personalMessage = personalMessageInput.value;
         const courseName = courseNameInput.value.trim() !== '' ? courseNameInput.value : '';
 
+        //Checks that a valid student name was entered.
+        if (/^[^a-zA-Z]*$/.test(studentName.trim())) {
+            return alert(`Student's name must contain letters. \nPlease enter a valid name.`);
+        } else if (/[!@#$%&*()_+\=\[\]{};:"\\|,.<>\/?]/.test(studentName.trim())) {
+            //checks for all special characters except ^-'
+            return alert(`Student's name contains a special character which is not allowed. \nPlease enter a valid name.`);
+        } else if (/\d/.test(studentName.trim())) {
+            return alert(`Student's name may not contain numbers. \nPlease enter a valid name.`);
+        }
+
+        //Checks that the user completed the student name and personal message input fields.
         if (studentName.trim() === '' || personalMessage.trim() === '') {
             alert('Please fill in all fields');
             return;
@@ -26,15 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 🚨 Generate certificate content dynamically
         certificateContent.innerHTML = `
-      <h1 style="font-weight:500">Certificate of Achievement</h1>
-      <p>This is to certify that</p>
-      <h3 style="font-weight:500">${studentName}</h3>
-      <p>has almost completed the<p>
-      <h3 style="font-weight:500">${courseName} Course</h3>
-      <p>with the legendary perseverance and world-class bad-assery for never giving up🏆</p>
-      <img src="logo.png" alt="CodeSpace Logo" style="max-width:50%">
-      <p>${personalMessage}</p>
-    `;
+            <h1 style="font-weight:500">Certificate of Achievement</h1>
+            <p>This is to certify that</p>
+            <h3 style="font-weight:500">${studentName}</h3>
+            <p>has almost completed the<p>
+            <h3 style="font-weight:500">${courseName} Course</h3>
+            <p>with the legendary perseverance and world-class bad-assery for never giving up🏆</p>
+            <img src="logo.png" alt="CodeSpace Logo" style="max-width:50%">
+            <p>${personalMessage}</p>
+        `;
 
         //  Display the modal
         modal.style.display = 'block';
