@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hide the modal initially
     modal.style.display = 'none';
 
+    //Event listener which produces modal certificate on form submission
     cardForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h3 style="font-weight:500">${studentName}</h3>
             <p>has almost completed the<p>
             <h3 style="font-weight:500">${courseName} Course</h3>
-            <p>with the legendary perseverance and world-class bad-assery for never giving up🏆</p>
+            <p>with legendary perseverance and world-class bad-assery for never giving up🏆</p>
             <img src="logo.png" alt="CodeSpace Logo" style="max-width:50%">
             <p>${personalMessage}</p>
         `;
